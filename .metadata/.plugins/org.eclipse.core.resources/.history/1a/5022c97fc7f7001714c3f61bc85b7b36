@@ -1,0 +1,24 @@
+package threeway.projeto.service.dao;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+import threeway.projeto.modelo.Conta;
+
+public class ContaDao implements Dao<Conta>{
+
+	@Override
+	public Collection<Conta> listar() {
+		ArrayList<Conta> contas = new ArrayList<>();
+		
+		for(int i = 0; i < 10; i++) {
+			Conta conta = new Conta();
+			conta.setNumero(i);
+			conta.setTitular("Cliente" + i);
+			conta.setSaldo( i * 100);			
+		}
+		
+		return contas;
+	}
+
+}

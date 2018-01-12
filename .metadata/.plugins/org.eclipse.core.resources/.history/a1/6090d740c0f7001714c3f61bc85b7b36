@@ -1,0 +1,15 @@
+package threeway.projeto.service.dao;
+
+import java.util.Collection;
+
+import threeway.projeto.modelo.Conta;
+
+public class ContaDao implements Dao<Conta>{
+
+	@Override
+	public Collection<Conta> listar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

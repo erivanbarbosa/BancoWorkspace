@@ -1,0 +1,102 @@
+package threeway.projeto.gui;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import threeway.projeto.service.dao.LoginDao;
+
+public class LoginUI {
+
+	public static void main(String[] args) {
+
+		// Criando frame
+		final JFrame frame = new JFrame("Livraria - 3Way");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(300, 130);
+		frame.setVisible(true);
+		frame.setLocationRelativeTo(null);
+
+		JPanel panel = new JPanel() {
+			public void paintComponent(Graphics g) {
+				super.paintComponent(g);
+				Image imagem = new ImageIcon("javalib/Livraria-3-Way.png").getImage();
+				g.drawImage(imagem, 0, 0, this);
+			}
+		};
+
+		// icon
+		Image icon = Toolkit.getDefaultToolkit().getImage("javalib\\login.gif");
+		frame.setIconImage(icon);
+
+		frame.validate();
+
+		// Criando a label cpf
+		JLabel rotuloLogin = new JLabel();
+		rotuloLogin.setText("Login:  ");
+		panel.add(rotuloLogin);
+
+		final JTextField txtLogin = new JTextField(20);
+		panel.add(txtLogin);
+
+		// Criando a label senha
+		JLabel rotuloSenha = new JLabel();
+		rotuloSenha.setText("Senha: ");
+		panel.add(rotuloSenha);
+
+		final JTextField txtSenha = new JPasswordField(20);
+		panel.add(txtSenha);
+
+		JButton btnEntrar = new JButton(" Entrar ");
+		panel.add(btnEntrar);
+
+		btnEntrar.addActionListener(new ActionListener() {
+
+			// Tratamento do botão Entrar
+			public void actionPerformed(ActionEvent e) {
+
+				LoginDao loginDao = new LoginDao();
+				String login;
+				String senha;
+
+				try {
+					if (txtLogin.getText().isEmpty() || txtSenha.getText().isEmpty()) {
+						JOptionPane.showMessageDialog(null, "Você não preencheu todos os campos!");
+					} else {
+						login = txtLogin.getText();
+						senha = txtSenha.getText();
+
+						if (loginDao.validarCliente(login, senha)) {
+
+							frame.dispose();
+							PrincipalUI menu = new PrincipalUI();
+							menu.menuPrincipal();
+
+						} else {
+							JOptionPane.showMessageDialog(null, "Login ou senha inválidos!");
+						}
+					}
+				} catch (Exception exp2) {
+					JOptionPane.showMessageDialog(null, "Dados Inválidos. Não foi possível efetuar login!");
+				}
+			}
+		});
+
+		frame.setContentPane(panel);
+		panel.setVisible(true);
+		frame.setVisible(true);
+		frame.setResizable(false);
+	}
+
+}

@@ -1,0 +1,19 @@
+package threeway.projeto.service.dao;
+
+import threeway.projeto.modelo.Conta;
+
+public class LoginDao {
+
+	public boolean validarCliente(String cpf, String senha) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Conta montarCliente(String cpf) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	
+}

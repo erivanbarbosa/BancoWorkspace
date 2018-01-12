@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;threeway.projeto.modelo.Conta&apos; to &apos;Livro&apos;&#x0D;&#x0A;- Original project: &apos;Livraria-Modelo&apos;&#x0D;&#x0A;- Original element: &apos;threeway.projeto.modelo.Conta&apos;&#x0D;&#x0A;- Renamed element: &apos;threeway.projeto.modelo.Livro&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Conta&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;threeway.projeto.modelo{Conta.java[Conta" matchStrategy="1" name="Livro" qualified="false" references="true" similarDeclarations="false" stamp="1515782358960" textual="false" version="1.0"/>
+</session>

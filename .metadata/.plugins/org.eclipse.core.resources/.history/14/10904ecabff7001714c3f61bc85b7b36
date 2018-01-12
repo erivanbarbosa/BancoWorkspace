@@ -1,0 +1,5 @@
+package threeway.projeto.service.dao;
+
+public class ContaDao {
+
+}

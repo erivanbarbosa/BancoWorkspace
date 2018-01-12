@@ -1,0 +1,4 @@
+INDEX VERSION 1.130+D:\Treinamento\Java\BancoWorkspace\.metadata\.plugins\org.eclipse.jdt.core
+558673990.index
+2609993011.index
+855287573.index
